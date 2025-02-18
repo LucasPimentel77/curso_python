@@ -1,15 +1,19 @@
 from smtplib  import SMTP_SSL
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
 
+import os
+
+load_dotenv()
 
 servidor =  'smtp.hostinger.com'
 porta = 465
 
-usuario = 'temp11@cybersocial.org.br'
-senha = '@Aula321'
+usuario = os.getenv('USUARIO')
+senha = os.getenv('SENHA')
 
 remetente = usuario
-dest = 'payoce5186@noomlocs.com' #email temporario
+dest = 'payoce5186@noomlocs.com'
 corpo_email = 'testando mandar email pelo smtplib'
 assunto = 'testa da aula'
 
